@@ -1,0 +1,50 @@
+.cont {
+  background: url(../../../../wwwroot/Images/bg_img.png) no-repeat center fixed;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-size: cover;
+  text-align: center;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  position: relative;
+}
+
+.button-div {
+  padding: 10px;
+  margin: 0;
+  top: 45%;
+  position: relative;
+  height: 80px;
+  width: 40%;
+  border-radius: 5px;
+  background: #FFFFFF;
+  border-width: 0px;
+  cursor: default;
+}
+
+.button-login {
+  background: #8866F0;
+  color: #17005E;
+  margin: 0;
+  position: relative;
+  top: 44%;
+  height: 50px;
+  width: 250px;
+  border-radius: 10px;
+  border-width: 0px;
+}
+
+  .button-login:hover {
+    background: #683CEC;
+    color: #000000;
+  }
+
+  .button-login:active {
+    background: #FFFFFF;
+    color: #000000;
+  }

@@ -1,0 +1,106 @@
+.cont {
+  background: url(../../../../wwwroot/Images/bg_img.png) no-repeat center fixed;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-size: cover;
+  text-align: center;
+  position: relative;
+}
+
+.input-full-name {
+  padding: 10px;
+  margin: 0;
+  position: relative;
+  top: 20%;
+  height: 50px;
+  width: 250px;
+  border-radius: 5px;
+  border-width: 0px;
+}
+
+.input-email {
+  padding: 10px;
+  margin: 0;
+  position: relative;
+  top: 21%;
+  height: 50px;
+  width: 250px;
+  border-radius: 5px;
+  border-width: 0px;
+}
+
+.input-username {
+  padding: 10px;
+  margin: 0;
+  position: relative;
+  top: 22%;
+  height: 50px;
+  width: 250px;
+  border-radius: 5px;
+  border-width: 0px;
+}
+
+.input-password {
+  padding: 10px;
+  margin: 0;
+  position: relative;
+  top: 23%;
+  height: 50px;
+  width: 250px;
+  border-radius: 5px;
+  border-width: 0px;
+}
+
+.input-confirm-password {
+  padding: 10px;
+  margin: 0;
+  position: relative;
+  top: 24%;
+  height: 50px;
+  width: 250px;
+  border-radius: 5px;
+  border-width: 0px;
+}
+
+  .input-full-name:hover,
+  .input-full-name:active,
+  .input-email:hover,
+  .input-email:active,
+  .input-username:hover,
+  .input-username:active,
+  .input-password:hover,
+  .input-password:active,
+  .input-confirm-password:hover,
+  .input-confirm-password:active {
+    background: #B5B5B5;
+    color: #232323;
+  }
+
+.button-sign-up {
+  background: #8866F0;
+  color: #17005E;
+  margin: 0;
+  position: relative;
+  top: 26%;
+  height: 50px;
+  width: 250px;
+  border-radius: 10px;
+  border-width: 0px;
+}
+
+  .button-sign-up:hover {
+    background: #683CEC;
+    color: #000000;
+  }
+
+  .button-sign-up:active {
+    background: #FFFFFF;
+    color: #000000;
+  }
+
+.ask-for-login {
+  margin: 0;
+  position: relative;
+  top: 27%;
+}

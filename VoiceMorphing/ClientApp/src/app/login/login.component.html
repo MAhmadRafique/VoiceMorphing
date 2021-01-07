@@ -1,0 +1,28 @@
+<div class="cont">
+  <h1 style="color: #FFFFFF; position: relative; top: 30%"> Welcome Back </h1>
+  <input id="inp_username" #inp_username
+         class="input-username"
+         type="text"
+         [(ngModel)]="username"
+         placeholder="Enter your Username"
+         (keypress)="checkValidUsername($event)"
+         autofocus="autofocus" />
+  <br />
+
+  <input id="inp_password" #inp_password
+         class="input-password"
+         type="password"
+         [(ngModel)]="password"
+         placeholder="Enter your Password"/>
+  <br />
+
+  <button id="btn_login" #btn_login
+          class="button-login"
+          (click)="verifyLogin($event)">
+    Login
+  </button>
+  <div class="ask-for-signup">
+    <font color="#FFFFFF">Don't have an account? </font>
+    <a [routerLink]="['/sign-up']">Sign Up</a>
+  </div>
+</div>

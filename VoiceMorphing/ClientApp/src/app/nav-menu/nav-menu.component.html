@@ -1,0 +1,31 @@
+<header>
+  <!--<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">-->
+    <nav class="navbar fixed-top navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
+      <!--<div class="container">-->
+      <a class="navbar-brand" [routerLink]="['/']">Convert a Source Voice into a Target Voice</a>
+
+      <button class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target=".navbar-collapse"
+              aria-label="Toggle navigation"
+              [attr.aria-expanded]="isExpanded"
+              (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+           [ngClass]="{ show: isExpanded }">
+        <ul *ngIf="navItems.visible" class="navbar-nav flex-grow">
+          <li class="nav-item"
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark"
+               [routerLink]="['/login']">
+              <img src="images/icon-logout.svg" alt="Logout" title="Logout" height="40" width="40">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!--</div>-->
+    </nav>
+</header>

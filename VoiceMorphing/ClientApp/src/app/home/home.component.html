@@ -1,0 +1,38 @@
+<div class="cont">
+  <h1 style="color: #FFFFFF; position: relative; top: 30%"> Select a Source and a Target Voice </h1>
+  <input id="inp_source" #inp_source
+         style="display: none;"
+         type="file"
+         accept="audio/*"
+         (change)="onSourceChange($event)" />
+  <input id="inp_target" #inp_target
+         style="display: none;"
+         type="file"
+         accept="audio/*"
+         (change)="onTargetChange($event)" />
+
+  <button id="btn_source" #btn_target
+          class="button-source"
+          (click)="inp_source.click()">
+    Select Source Audio File
+  </button>
+  <br />
+  <button id="btn_target" #btn_target
+          class="button-target"
+          (click)="inp_target.click()">
+    Select Target Audio File
+  </button>
+  <br />
+
+  <button *ngIf="!sourceAndTargetSelected()"
+          id="btn_convert_dummy" #btn_convert_dummy
+          class="button-convert-dummy">
+    <b>CONVERT</b>
+  </button>
+  <button *ngIf="sourceAndTargetSelected()"
+          id="btn_convert" #btn_convert
+          class="button-convert"
+          (click)="convertVoice($event)">
+    <b>CONVERT</b>
+  </button>
+</div>

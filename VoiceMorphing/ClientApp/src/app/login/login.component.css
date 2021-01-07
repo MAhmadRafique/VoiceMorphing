@@ -1,0 +1,67 @@
+.cont {
+  background: url(../../../../wwwroot/Images/bg_img.png) no-repeat center fixed;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-size: cover;
+  text-align: center;
+  position: relative;
+}
+
+.input-username {
+  padding: 10px;
+  margin: 0;
+  position: relative;
+  top: 40%;
+  height: 50px;
+  width: 250px;
+  border-radius: 5px;
+  border-width: 0px;
+}
+
+.input-password {
+  padding: 10px;
+  margin: 0;
+  position: relative;
+  top: 41%;
+  height: 50px;
+  width: 250px;
+  border-radius: 5px;
+  border-width: 0px;
+}
+
+  .input-username:hover,
+  .input-username:active,
+  .input-password:hover,
+  .input-password:active {
+    background: #B5B5B5;
+    color: #232323;
+  }
+
+.button-login {
+  background: #8866F0;
+  color: #17005E;
+  margin: 0;
+  position: relative;
+  top: 44%;
+  height: 50px;
+  width: 250px;
+  border-radius: 10px;
+  border-width: 0px;
+}
+
+  .button-login:hover {
+    background: #683CEC;
+    color: #000000;
+  }
+
+  .button-login:active {
+    background: #FFFFFF;
+    color: #000000;
+  }
+
+.ask-for-signup {
+  margin: 0;
+  position: relative;
+  top: 45%;
+}

@@ -1,0 +1,56 @@
+<div class="cont">
+  <h1 style="color: #FFFFFF; position: relative; top: 15%"> Welcome to Voice Morphing </h1>
+  <input id="inp_fullName" #inp_fullName
+         class="input-full-name"
+         type="text"
+         [(ngModel)]="fullname"
+         placeholder="Enter your Full Name"
+         (keypress)="checkValidName($event)"
+         autofocus="autofocus" />
+  <br />
+  <input id="inp_email" #inp_email
+         class="input-email"
+         type="email"
+         [(ngModel)]="email"
+         placeholder="Enter your Email"
+         (keypress)="checkValidEmail($event)" />
+  <br />
+  <input id="inp_username" #inp_username
+         class="input-username"
+         type="text"
+         [(ngModel)]="username"
+         placeholder="Enter your Username"
+         (keypress)="checkValidUsername($event)" />
+  <br />
+
+  <input id="inp_password" #inp_password
+         class="input-password"
+         type="password"
+         [(ngModel)]="password"
+         placeholder="Enter your Password" />
+  <br />
+
+  <input id="inp_confirmPassword" #inp_confirmPassword
+         class="input-confirm-password"
+         type="password"
+         [(ngModel)]="confirmPassword"
+         placeholder="Confirm your Password" />
+  <br />
+  <div style="color: #FFFFFF; position: relative; top: 24%">
+    <input id="inp_agreeTOC" #inp_agreeTOC
+           type="checkbox"
+           [(ngModel)]="agreeTOC" />
+    <font color="#FFFFFF">&nbsp;&nbsp;I agree to the Terms and Conditions</font>
+    <br />
+  </div>
+
+  <button id="btn_signUp" #btn_signUp
+          class="button-sign-up"
+          (click)="verifySignUp($event)">
+    Sign Up
+  </button>
+  <div class="ask-for-login">
+    <font color="#FFFFFF">Already have an account? </font>
+    <a [routerLink]="['/login']">Login</a>
+  </div>
+</div>
