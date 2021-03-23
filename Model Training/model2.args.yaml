@@ -1,0 +1,13 @@
+config: config.yaml
+data_dir: C:/Users/rohan/Desktop/OneshotVoiceConversionProject/adaptive_voice_conversion-master/DATA
+iters: 5000
+load_model: false
+load_model_path: model2
+load_opt: false
+logdir: log/
+save_steps: 2500
+store_model_path: model2
+summary_steps: 500
+tag: init
+train_index_file: train_samples_$segment_size.json
+train_set: train
