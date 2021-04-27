@@ -1,0 +1,13 @@
+config: config.yaml
+data_dir: /home/cyhuang/AdaIN-VC/vctk_data
+iters: 400000
+load_model: false
+load_opt: false
+load_path: null
+log_dir: log/
+save_path: /home/cyhuang/AdaIN-VC/vctk_model
+save_steps: 5000
+summary_steps: 500
+tag: vctk_model
+train_index_file: train_128.json
+train_set: train
