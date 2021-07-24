@@ -102,7 +102,7 @@ class Inferencer(object):
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('--model_path', '-m', default='C:/Users/rohan/Desktop/VC_with_neural_Vocoder/AdaIN-VC-NeuralVocoder')
+    parser.add_argument('--model_path', '-m', default='C:\Git\VoiceMorphing\VoiceMorphingWithNeuralVocoderAdded')
     parser.add_argument('--source', '-s', default='Target.wav')
     parser.add_argument('--target', '-t', default='t2.wav')
     parser.add_argument('--output','-o', default='output.wav')
