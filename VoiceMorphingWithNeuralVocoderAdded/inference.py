@@ -12,6 +12,14 @@ from model import AE
 from vocoder.model import Vocoder
 from vocoder.utils import load_wav, save_wav, melspectrogram
 from utils import cc
+import noisereduce as nr
+from scipy.io import wavfile
+from pydub import AudioSegment
+
+import matplotlib.pyplot as pp
+
+from resemblyzer import VoiceEncoder, preprocess_wav
+from pathlib import Path
 
 class Inferencer(object):
     def __init__(self, config, args):
@@ -84,19 +92,51 @@ class Inferencer(object):
         write(output_path, rate=self.args.sample_rate, data=wav_data)
 
     def inference_from_path(self):
-        src_mel = self.get_spectrograms(self.args.source)
-        tar_mel = self.get_spectrograms(self.args.target)
+        src_mel = self.get_spectrograms("reduced-noise-source.wav")
+        tar_mel = self.get_spectrograms("reduced-noise-target.wav")
+        
+        # src_mel = self.get_spectrograms(self.args.source)
+        # tar_mel = self.get_spectrograms(self.args.target)
         cvt_wav, _ = self.inference_one_utterance(src_mel, tar_mel)
         save_wav(self.args.output, cvt_wav, self.params['preprocessing']['sample_rate'])
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('--model_path', '-m', default='C:/Users/rohan/Desktop/VC_with_neural_Vocoder/AdaIN-VC-6cf4f30b3f2f1edd22ae926e6892c14508262226')
+    parser.add_argument('--model_path', '-m', default='C:/Users/rohan/Desktop/VC_with_neural_Vocoder/AdaIN-VC-NeuralVocoder')
     parser.add_argument('--source', '-s', default='Target.wav')
-    parser.add_argument('--target', '-t', default='Kashif.wav')
+    parser.add_argument('--target', '-t', default='t2.wav')
     parser.add_argument('--output','-o', default='output.wav')
     parser.add_argument('--vocoder_path', '-v', type=str, help='vocoder path', default='vocoder')
     args = parser.parse_args()
+    
+    sound = AudioSegment.from_wav(args.source)
+    sound = sound.set_channels(1)
+    sound.export(args.source, format="wav")
+  
+    
+    sound = AudioSegment.from_wav(args.target)
+    sound = sound.set_channels(1)
+    sound.export(args.target , format="wav")
+  
+    
+    rate1, data1 = wavfile.read(args.source)
+    rate2, data2 = wavfile.read(args.target)
+    rate3, noisy_part = wavfile.read("SampleNoise.wav")
+
+
+    data1 = data1/1.0
+    data2 = data2/1.0
+    noisy_part = noisy_part/1.0
+    
+    
+     
+    reduced_noise1 = nr.reduce_noise(audio_clip=data1, noise_clip=noisy_part, verbose=True)
+    
+    write("reduced-noise-source.wav", rate1, data1.astype(np.int16))
+
+    reduced_noise2 = nr.reduce_noise(audio_clip=data2, noise_clip=noisy_part, verbose=True)
+    write("reduced-noise-target.wav", rate2, data2.astype(np.int16))
+
     map_location=torch.device('cpu')
 
     # load config file
@@ -104,3 +144,6 @@ if __name__ == '__main__':
         config = yaml.load(f, Loader=yaml.FullLoader)
     inferencer = Inferencer(config=config, args=args)
     inferencer.inference_from_path()
+    
+    
+
